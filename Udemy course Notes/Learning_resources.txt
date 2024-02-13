@@ -1,0 +1,7 @@
+
+Google Colab file: https://colab.research.google.com/drive/1_g8fJDwFXDNZATaK6Ub4-WOnhZOzXgBM?usp=sharing
+Data link:
+	training set https://drive.google.com/drive/folders/1KsmLJhYtLKwc5Ox_wKAluaqVYnoJaO30?usp=sharing
+	dev set https://drive.google.com/drive/folders/1KsmLJhYtLKwc5Ox_wKAluaqVYnoJaO30?usp=sharing
+	vocab.txt https://drive.google.com/drive/folders/1KsmLJhYtLKwc5Ox_wKAluaqVYnoJaO30?usp=sharing
+	evaluation script https://drive.google.com/file/d/1Oa2kyOMWSitFAsNbZScZtUrvpbDZi9Kh/view?usp=sharing

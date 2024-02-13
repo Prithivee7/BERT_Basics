@@ -1,0 +1,19 @@
+ Due to some updates and changes, the line of code presented in the video is not exactly correct anymore and might lead to an error. The new correct line should be:
+
+all_batched = all_dataset.padded_batch(BATCH_SIZE, padded_shapes=((3, None), ()))
+
+Notice the new padded_shapes.
+
+
+padded_shapes should be a way to indicate how each dimension of our dataset should be treated regarding the 
+padding process.
+
+If you have a look at next(iter(all_dataset)) right before apply padded_batch it can give us some clues
+ because it gives us the dimensions/the shape. For instance I got:
+
+(<tf.Tensor: shape=(3, 8), dtype=int32, numpy=
+ array([[ 101, 2215, 3215, 2015, 2000, 2175, 2041,  102],
+        [   1,    1,    1,    1,    1,    1,    1,    1],
+        [   0,    0,    0,    0,    0,    0,    0,    0]], dtype=int32)>,
+ <tf.Tensor: shape=(), dtype=int32, numpy=0>)
+so the dimensions are ((3, N), ()) , N being the length of the sentence. This N is what we want to change so that it is the same in each batch, so that is the dimension along which we want the padding to be applied. The others should not be modified. Hence our padded_shapes=((3, None), ()), None indicating a dimension that must be padded.

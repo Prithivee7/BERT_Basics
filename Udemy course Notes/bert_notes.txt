@@ -1,0 +1,37 @@
+The number of nodes in the output layer depends on the nature of the problem (e.g., classification, regression).
+For example, in binary classification, there may be one output node with a sigmoid activation function,
+ while in multi-class classification, there may be multiple output nodes with softmax activation.
+
+BERT
+	Tokenizer
+		For tokenizing a sentence -> I am a good boy
+		Tokens (WordPiece) -> "I", "am", "a", "good", "boy"
+	
+	Foe BERT we need to give 3 inputs
+		token id -> Every token has a number
+		Attention Mask 
+		Segment ID -> (A or B)
+
+if there is only one sentence in BERT, then the final token will be the 'SEP' token.
+
+When we give the input sentence to BERT and generate embeddings. It gives 2 different types of outputs.
+First one will give a single vector for the whole sequence.
+The second one will give a vector for every token.
+Depending on the application we are using we can choose either of them.
+The first one will be for the classification task. It represents the whole sentence
+	shape -> (1,768)
+	1 represents the batch
+	768 represents the hidden dimensions
+	So for the whole sentence, we will have a single embedding
+The second one gives a vector representation for every single one of out tokens.
+	shape -> (1,6,768)
+	1 represents the batch
+	6 represents the number of tokens in the sentence. (For each token we will have an embedding dimension of 768)
+	768 represents the hidden dimensions
+	
+
+
+1_Bert_tokenizer.ipynb 
+	-> BERT was used for tokenizing purpose and a custom model was trained for embedding.
+2_Bert_embedding
+	-> BERT was used for the embedding layer as well

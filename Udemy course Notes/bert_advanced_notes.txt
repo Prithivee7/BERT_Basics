@@ -1,0 +1,22 @@
+When we give the input sentence to BERT and generate embeddings. It gives 2 different types of outputs.
+First one will give a single vector for the whole sequence.
+The second one will give a vector for every token.
+
+For Question Answering we use the second one.
+
+The first sentence will be the answer and the second sentence will be the question.
+They will be separated by a [SEP] token.
+In the first sentence, we have to find the beginning of the answer and the end of the answer.
+
+For finetuning BERT for question answering task, we need to add a dense layer.
+This dense layer has 2 output units.
+The first output unit will represent the score for being the start word for the answer.
+The second output unit will represent the score for being the end word for the answer.
+So for each word in the sentence, we get a score for being the start and the end words.
+So the words with the highest scores are chosen for the start and the end.
+
+In Question Answering predicting the start and end position of an answer is a classification problem.
+So we can use Cross Entropy as the loss function.
+
+
+
